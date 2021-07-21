@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>jzcccc</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://jzcccc.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2020-12-31T17:28:20.788Z</updated>
-  <id>http://example.com/</id>
+  <link href="http://jzcccc.github.io/"/>
+  <updated>2021-07-21T15:30:46.912Z</updated>
+  <id>http://jzcccc.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -17,9 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>fb</title>
+    <link href="http://jzcccc.github.io/2021/07/21/fb/"/>
+    <id>http://jzcccc.github.io/2021/07/21/fb/</id>
+    <published>2021-07-21T15:30:46.000Z</published>
+    <updated>2021-07-21T15:30:46.912Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/01/01/hello-world/"/>
-    <id>http://example.com/2021/01/01/hello-world/</id>
+    <link href="http://jzcccc.github.io/2021/01/01/hello-world/"/>
+    <id>http://jzcccc.github.io/2021/01/01/hello-world/</id>
     <published>2020-12-31T17:28:20.788Z</published>
     <updated>2020-12-31T17:28:20.788Z</updated>
     
