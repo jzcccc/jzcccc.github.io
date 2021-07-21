@@ -24,105 +24,32 @@
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="jzcccc" type="application/atom+xml">
 </head>
 <body id="bodyx">
-    <div class="hd logodiv">
-    <img src="/img/jzcccc.png" class="logopng" alt="logo">
-    <p class="logot">
-         💻 
-         <span class="logo_2"></span>
-        <h3 class="words" style="font-weight: bold;font-family: Georgia;"> 
-            ✊ Java 🙈 随笔 💻 🌈 
-        </h3>
-    </p>
-</div>
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            Java NIO &amp;&amp; Netty
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1 id="Java-NIO-Netty学习篇"><a href="#Java-NIO-Netty学习篇" class="headerlink" title="Java NIO Netty学习篇"></a>Java NIO Netty学习篇</h1><p>[TOC]</p>
+<p>[TOC]</p>
+<h2 id="Netty学习资料"><a href="#Netty学习资料" class="headerlink" title="Netty学习资料"></a>Netty学习资料</h2><h3 id="博客-公众号"><a href="#博客-公众号" class="headerlink" title="博客 公众号"></a>博客 公众号</h3><p>NIO、BIO、AIO 区别 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/javaguide/p/io.html">https://www.cnblogs.com/javaguide/p/io.html</a></p>
+<p>IO模型知多少｜理论篇 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/sheng-jie/p/how-much-you-know-about-io-models.html">https://www.cnblogs.com/sheng-jie/p/how-much-you-know-about-io-models.html</a></p>
+<p>netty从入门到踹门 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/GfV9w2B0mbT7PmeBS45xLw">https://mp.weixin.qq.com/s/GfV9w2B0mbT7PmeBS45xLw</a></p>
+<p>并发编程网  Java NIO 系列教程 <a target="_blank" rel="noopener" href="https://ifeve.com/java-nio-all/">https://ifeve.com/java-nio-all/</a></p>
+<p>java nio 美团技术团队   Java NIO浅析 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23488863">https://zhuanlan.zhihu.com/p/23488863</a></p>
+<p>javaguide  netty从bio讲起，附带学习视频&amp;书籍推荐 <a target="_blank" rel="noopener" href="https://github.com/Snailclimb/netty-practical-tutorial/blob/master/docs/1-fromBIO%26NIOToNetty.md">https://github.com/Snailclimb/netty-practical-tutorial/blob/master/docs/1-fromBIO%26NIOToNetty.md</a></p>
+<h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>Essential Netty in Action 《Netty 实战(精髓)》 <a target="_blank" rel="noopener" href="https://waylau.com/essential-netty-in-action/index.html">https://waylau.com/essential-netty-in-action/index.html</a></p>
+<p>UNIX网络编程卷1  链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ThZSsi8o5EVtBjGwL9o1zw">https://pan.baidu.com/s/1ThZSsi8o5EVtBjGwL9o1zw</a>  密码: g32p</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p>JavaGuide Netty面试题 <a target="_blank" rel="noopener" href="https://xiaozhuanlan.com/topic/4028536971">https://xiaozhuanlan.com/topic/4028536971</a></p>
 
+    </div>
 
-<div class="hd">
-    <ol class="breadcrumb">
-        
-            <li><a class="ba" href="/about">关于我👀</a></li>
-        
-            <li><a class="ba" href="https://jzcccc.github.io/">访问主站🎉</a></li>
-        
-            <li><a class="ba" target="_blank" rel="noopener" href="https://github.com/jzcccc/">GitHub🐒</a></li>
-        
-
-            
-<script src="/libs/jquery.min.js"></script>
-
-            
-<script src="/js/search.js"></script>
-
-            
-            <script type="text/javascript" id="local.search.active">
-                var inputArea       = document.querySelector("#local-search-input");
-                var getSearchFile = function(){
-                    var path = "/search.xml";
-                    searchFunc(path, 'local-search-input', 'local-search-result');
-                }
-                inputArea.onfocus = function(){ getSearchFile() }
-
-                var $resetButton = $("#search-form .fa-times");
-                var $resultArea = $("#local-search-result");
-
-                inputArea.oninput = function(){ $resetButton.show(); }
-                resetSearch = function(){
-                    $resultArea.html("");
-                    document.querySelector("#search-form").reset();
-                    $resetButton.hide();
-                    $(".no-result").hide();
-                }
-                inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
-                //No search result
-                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-                    if (!$(e.target).text()) {
-                        $(".no-result").show(100);
-                    } else {
-                        $(".no-result").hide();
-                    }
-                })
-            </script>
-
-    </ol>
-    <hr>
-</div>
-<div class="hd">
-    
-    
-        
-        
-            <div class="titlex">
-                <p><span class="jing"></span><span style="color: #6d9ee7;"> 公元</span> 
-                 2021年 🕛
-                </p>
-            </div>
-            
-        
-        <a class="flink" href="/2021/07/22/Java-NIO-Netty/">
-            <div class="list">
-                <div class="postname">
-                    Java NIO &amp;&amp; Netty
-                </div>
-                <div class="posttime">
-                    July 22nd
-                </div>
-            </div>
-        </a>
-    
-        
-        
-        <a class="flink" href="/2021/07/21/fb/">
-            <div class="list">
-                <div class="postname">
-                    fb
-                </div>
-                <div class="posttime">
-                    July 21st
-                </div>
-            </div>
-        </a>
     
 </div>
-
     <div class="footer" id="footer">
     <p><h4>版权所有 © 2020 | 作者: Jzcccc | 主题 By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
     
