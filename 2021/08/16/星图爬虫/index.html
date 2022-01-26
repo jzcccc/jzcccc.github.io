@@ -13,7 +13,7 @@
 
 
 
-<title>跳表 | jzcccc</title>
+<title>星图爬虫 | jzcccc</title>
 
 
 
@@ -194,7 +194,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">跳表</h1>
+            <h1 class="post-title">星图爬虫</h1>
             
                 <div class="post-meta">
                     
@@ -212,80 +212,33 @@
         </header>
 
         <div class="post-content">
-            <h2 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h2><blockquote>
-<p>从0到99之间，随机猜字，需要猜多少次？</p>
-</blockquote>
-<img src="/image/image-20210817000754587.png" alt="image-20210817000754587" style="zoom: 20%;" />
-
-<p>二分查找法的时间复杂度 : O(logn)</p>
-<p>二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。</p>
-<h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><h3 id="什么是跳表"><a href="#什么是跳表" class="headerlink" title="什么是跳表"></a>什么是跳表</h3><blockquote>
-<p>基于链表，加上多级索引，减少遍历的结束数</p>
-</blockquote>
-<p>对单链表进行查询时，时间复杂度时O(n)。</p>
-<p>当对原始链表建立一级“索引”时，每两个结点提取一个结点所为索引。例如查找16，如果是单链表，需要遍历10次；</p>
-<p>如果建立一层索引，只需要遍历7次；建立2级索引，只需要6次。</p>
-<img src="/image/image-20210817001838421.png" alt="image-20210817001838421" style="zoom:25%;" />
-
-
-
-<p>若是一个64结点，五级索引的跳表，寻找62，只需要遍历11个结点</p>
-<img src="/image/image-20210817002122731.png" alt="image-20210817002122731" style="zoom:25%;" />
-
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><blockquote>
-<p>与二分查找法一样，O(logn)</p>
-</blockquote>
-<ol>
-<li><p>每两个结点抽出一个结点，作为上一级索引，那一级索引结点个数大约为n/2，二级数量为n/4，以此类推，</p>
-<p>第k-1级索引为1/2，那么第k级结点个数为 <strong>n/(2^k)</strong></p>
-</li>
-<li><p>假设索引有h级，最高级索引2个结点。按照公式，<strong>n/(2^h)=2</strong>，从而求得 <strong>h=log2n-1</strong>。如果包含原始链表，那么跳表的</p>
-<p>高度就是 <strong>log2n</strong> ，如果每一层需要遍历m个结点，那么跳表的时间复杂度就是 *<em>O(m</em>logn)**。</p>
-</li>
-<li><p>假设现在要查找的数据是x，在第k级索引中，遍历y后，发现x大于y，小于z，通过down指针下探，可以发现，y和z之间</p>
-<p>只有3个结点。</p>
-<p>​                                             <img src="/image/image-20210817003612920.png" alt="image-20210817003612920" style="zoom:25%;" /></p>
-<p>结合分析可以知道，跳表中查询任意数据的时间复杂度为  **O(logn)**。</p>
-</li>
+            <h2 id="巨量星图接口签名"><a href="#巨量星图接口签名" class="headerlink" title="巨量星图接口签名"></a>巨量星图接口签名</h2><p>最近公司在对接星图，苦与开放API不满足需求，于是动了心思，看看星图的前端怎么拿数据的</p>
+<h3 id="前端调试"><a href="#前端调试" class="headerlink" title="前端调试"></a>前端调试</h3><ol>
+<li>先看看前端调用的接口，主要是sign比较麻烦</li>
 </ol>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><blockquote>
-<p>O(n)</p>
-</blockquote>
-<ol>
-<li>假设原始链表为n，一级索引则为n/2，以此类推…，n/2+n/4+n/8…+8+4+2=n-2。</li>
-</ol>
-<img src="/image/image-20210817003923337.png" alt="image-20210817003923337" style="zoom:25%;" />
-
+<p><img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220126161553.png" alt="image-20220126161550809"></p>
 <ol start="2">
-<li><p>假设扩大间隔，每3个结点抽一个索引。同样类推可得 n/3, n/9,n/27,…,9,3,1，虽然还是等比数列，最后同样是n-2。</p>
-<p>但对比两个结点的构建方式，减少近一半存储空间。</p>
+<li>把请求添加到watch里，再从前端代码debug入手</li>
+</ol>
+<p><img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220126162032.png" alt="image-20220126161801577"></p>
+<ol start="3">
+<li>一步步debug，看到md5前，加入了盐值，加了一个随机数</li>
+</ol>
+<p><img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220126162032.png" alt="image-20220126162029751"></p>
+<hr>
+<p>整个过程比较简单，前端拼接参数，md5加密后，放到sign参数上，携带上cookie就ok</p>
+<h3 id="模拟前端访问"><a href="#模拟前端访问" class="headerlink" title="模拟前端访问"></a>模拟前端访问</h3><ol>
+<li><p>从前端Network拷贝一个接口到postman，验证请求</p>
+<p><img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220126162707.png" alt="image-20220126162705857"></p>
+</li>
+<li><p>加密参数，从前端看到，加密的方式是，{参数}{参数值}拼接的方式， 后面的service_method要一个个看。请求什么接口，用什么service_method是固定的，直接F12找到你要的接口即可。</p>
+</li>
+<li><p>待加密串</p>
+<p><code>limit10page1queryqueryservice_methodDemanderGetUniversalDemandListservice_nametask.AdStarTaskServicesign_strict1</code>  </p>
+</li>
+<li><p> 整个md5后，放到sign进行请求，header带上cookie值</p>
 </li>
 </ol>
-<p>时间开发中，当原链表中存储的对象可能很大时，而索引结点只需要存储关键值以及索引，那么索引占用的额外空间其实可以忽略。</p>
-<h3 id="高效的动态插入和删除"><a href="#高效的动态插入和删除" class="headerlink" title="高效的动态插入和删除"></a>高效的动态插入和删除</h3><p>在单链表中，单定位好要插入的位置，插入结点的时间复杂度就是O(1)。但是，为了保证原始链表中数据的有序性，需要先找好</p>
-<p>插入的位置，即 <strong>O(logn)</strong></p>
-<p>​                                                        <img src="/image/image-20210817004645488.png" alt="image-20210817004645488" style="zoom:40%;" /></p>
-<h3 id="跳表索引动态更新"><a href="#跳表索引动态更新" class="headerlink" title="跳表索引动态更新"></a>跳表索引动态更新</h3><p>当不停的插入数据，不动态更新时，可能会出现极端情况</p>
-<img src="/image/image-20210817005010666.png" alt="image-20210817005010666" style="zoom:50%;" />
-
-<p>跳表使用随机函数来维护“平衡性”，即当插入时，可以选择同时将这个数据插入到部分索引层中。例如下图，随机函数</p>
-<p>生成值k，即插入到第一级和第k级索引中。</p>
-<img src="/image/image-20210817005218513.png" alt="image-20210817005218513" style="zoom:30%;" />
-
-<h3 id="跳表的应用"><a href="#跳表的应用" class="headerlink" title="跳表的应用"></a>跳表的应用</h3><blockquote>
-<p>Redis中的有序集合</p>
-</blockquote>
-<p>有序集合的核心操作</p>
-<ul>
-<li>插入一个数据</li>
-<li>删除一个数据</li>
-<li>查找一个数据</li>
-<li>按区间查找数据</li>
-<li>迭代数据有序序列</li>
-</ul>
-<p>跳表的效率与红黑树相似，大部分功能其实红黑树也能实现，但是按照区间查找数据，跳表可以做到O(logn)时间复杂度</p>
-<p>定位区间的起点，然后在原始链表中进行遍历，非常高效。</p>
-<p>另外，跳表相对于红黑树，相对容易实现，更好理解。而简单就意味着可读性好，不容易出错。还有，跳表更加灵活，它可以通过改变索引构建策略，有效平衡执行效率和内存消耗。</p>
 
         </div>
 
@@ -300,7 +253,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://jzcccc.github.io/2021/08/16/skiplist/">http://jzcccc.github.io/2021/08/16/skiplist/</a></span>
+                        <span><a href="http://jzcccc.github.io/2021/08/16/%E6%98%9F%E5%9B%BE%E7%88%AC%E8%99%AB/">http://jzcccc.github.io/2021/08/16/%E6%98%9F%E5%9B%BE%E7%88%AC%E8%99%AB/</a></span>
                     </p>
                 
                 
@@ -324,7 +277,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E7%AE%97%E6%B3%95/"># 算法</a>
+                        <a href="/tags/%E7%88%AC%E8%99%AB/"># 爬虫</a>
                     
                         
                 </span>
@@ -337,8 +290,10 @@
         </section>
         <section class="post-nav">
             
+                <a class="prev" rel="prev" href="/2021/08/16/skiplist/">跳表</a>
             
-            <a class="next" rel="next" href="/2021/08/16/%E6%98%9F%E5%9B%BE%E7%88%AC%E8%99%AB/">星图爬虫</a>
+            
+            <a class="next" rel="next" href="/2021/07/22/Java-NIO-Netty/">Java NIO && Netty</a>
             
         </section>
 
