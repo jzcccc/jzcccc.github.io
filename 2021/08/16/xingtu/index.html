@@ -231,12 +231,14 @@
 <li><p>从前端Network拷贝一个接口到postman，验证请求</p>
 <p><img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220126162707.png" alt="image-20220126162705857"></p>
 </li>
-<li><p>加密参数 limit10page1queryqueryservice_methodDemanderGetUniversalDemandListservice_nametask.AdStarTaskServicesign_strict1   整个md5后，放到sign进行请求，cookie要放到header</p>
+<li><p>加密参数，从前端看到，加密的方式是，{参数}{参数值}拼接的方式， 后面的service_method要一个个看。请求什么接口，用什么service_method是固定的，直接F12找到你要的接口即可。</p>
+</li>
+<li><p>待加密串</p>
+<p><code>limit10page1queryqueryservice_methodDemanderGetUniversalDemandListservice_nametask.AdStarTaskServicesign_strict1</code>  </p>
+</li>
+<li><p> 整个md5后，放到sign进行请求，header带上cookie值</p>
 </li>
 </ol>
-<hr>
-<p>title: xingtu<br>date: 2022-01-26 16:51:56<br>tags:</p>
-<hr>
 
         </div>
 
