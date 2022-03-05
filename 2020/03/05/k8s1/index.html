@@ -70,7 +70,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"jzcccc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"ziBJGTzwD3Vd2pSw4BTtxkwh-gzGzoHsz","app_key":"I5cTSunQfR9C4ijOeNi90fNK","server_url":"https://zibjgtzw.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"jzcccc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"ziBJGTzwD3Vd2pSw4BTtxkwh-gzGzoHsz","app_key":"I5cTSunQfR9C4ijOeNi90fNK","server_url":"https://zibjgtzw.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -295,7 +295,7 @@
 </ul>
 <p>如果说是部署、水平扩展等这种能力，那么只需要Docker的Compose+Swarm，再配合脚本即可实现，那么K8s就没有优势可言。</p>
 <p><strong>Kubernetes的顶层设计</strong></p>
-<img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220305161923.png" srcset="/img/loading.gif" lazyload alt="image-20220305161915690" style="zoom:50%;" />
+<img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220305161923.png" alt="image-20220305161915690" style="zoom:50%;" />
 
 <p><strong>控制节点</strong></p>
 <p>分别为个部分：负责API服务的kube-apiserver、负责调度的kube-scheduler、以及负责容器编排的kube-controller-manager。整个集群的持久化数据，则由kube-apiserver处理后保存在Etcd。</p>
@@ -318,7 +318,7 @@
 <p>Kubernetes中最小的一个调度单位，为Pod。即可通过Localhost进行通信、或者访问同一个磁盘空间。</p>
 <p>另外Service服务，作为Pod的代理入口，在集群内为Pod暴露一个固定的网络地址，进行Pod之间的交互。</p>
 <p>围绕Pod不断向真实的技术场景扩展，可以摸索出Kubernetes项目核心功能的“全景图”</p>
-<img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220305174428.png" srcset="/img/loading.gif" lazyload alt="image-20220305171452930" style="zoom: 33%;" />
+<img src="https://gitee.com/jzcccc/pig-go/raw/master/img/20220305174428.png" alt="image-20220305171452930" style="zoom: 33%;" />
 
 <p>可以简单理解，Pod、Secret、Etcd、Service、Deployment等服务功能、解决了应用于应用之间的关系；而“编排对象”：Job、CronJob、DaemonSet等，用来描述我们试图管理的应用，解决“如何容器化这个应用”这个问题。</p>
 
@@ -424,7 +424,7 @@
             </div>
 
             
-  <article id="comments" lazyload>
+  <article id="comments">
     
 
   </article>
@@ -607,10 +607,6 @@
 
 
 
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
 
 
 
