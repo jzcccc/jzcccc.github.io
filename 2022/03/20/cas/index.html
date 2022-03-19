@@ -19,13 +19,13 @@
     <meta name="description" content="什么是CAS用于多线程环境下同步机制，是一种无锁的原子操作。CAS包含三个操作数：内存位置、预期数值和新值。CAS的实现逻辑，是将内存地址处的数值与期望值进行比较，若一致，则将内存处的值替换为新值。若不相等，则不做任何操作。 当多个线程竞争，同时操作一个数据时，通过CAS操作，只有一个线程会更新成功，而失败的线程不会线程挂起，可以自旋进行CAS操作。整个操作时无锁的，失败线程无需挂起，唤醒操作，不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的CAS实现原理">
-<meta property="og:url" content="http://jzcccc.github.io/2022/03/01/cas/index.html">
+<meta property="og:url" content="http://jzcccc.github.io/2022/03/20/cas/index.html">
 <meta property="og:site_name" content="caizhijian&#39;blog 💻🧑‍💻😜">
 <meta property="og:description" content="什么是CAS用于多线程环境下同步机制，是一种无锁的原子操作。CAS包含三个操作数：内存位置、预期数值和新值。CAS的实现逻辑，是将内存地址处的数值与期望值进行比较，若一致，则将内存处的值替换为新值。若不相等，则不做任何操作。 当多个线程竞争，同时操作一个数据时，通过CAS操作，只有一个线程会更新成功，而失败的线程不会线程挂起，可以自旋进行CAS操作。整个操作时无锁的，失败线程无需挂起，唤醒操作，不">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/jzcccc/pig-go/raw/master/img/20220320011319.png">
-<meta property="article:published_time" content="2022-02-28T16:00:36.000Z">
-<meta property="article:modified_time" content="2022-03-19T17:16:10.482Z">
+<meta property="article:published_time" content="2022-03-19T16:00:36.000Z">
+<meta property="article:modified_time" content="2022-03-19T17:26:41.298Z">
 <meta property="article:author" content="Jzcccc">
 <meta property="article:tag" content="Java多线程">
 <meta name="twitter:card" content="summary_large_image">
@@ -201,8 +201,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-01 00:00" pubdate>
-          2022年3月1日 凌晨
+        <time datetime="2022-03-20 00:00" pubdate>
+          2022年3月20日 凌晨
         </time>
       </span>
     
@@ -363,7 +363,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Java的CAS实现原理</div>
-      <div>http://jzcccc.github.io/2022/03/01/cas/</div>
+      <div>http://jzcccc.github.io/2022/03/20/cas/</div>
     </div>
     <div class="license-meta">
       
@@ -375,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月1日</div>
+          <div>2022年3月20日</div>
         </div>
       
       
