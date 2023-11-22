@@ -16,27 +16,27 @@
   <meta name="author" content="Jzcccc">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二分查找法 从0到99之间，随机猜字，需要猜多少次？    二分查找法的时间复杂度 : O(logn) 二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。 跳表什么是跳表 基于链表，加上多级索引，减少遍历的结束数  对单链表进行查询时，时间复杂度时O(n)。 当对原始链表建立一级“索引”时，每两">
+    <meta name="description" content="二分查找法 从0到99之间，随机猜字，需要猜多少次？   二分查找法的时间复杂度 : O(logn) 二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。 跳表什么是跳表 基于链表，加上多级索引，减少遍历的结束数  对单链表进行查询时，时间复杂度时O(n)。 当对原始链表建立一级“索引”时，每两个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跳表">
 <meta property="og:url" content="http://jzcccc.github.io/2021/08/16/skiplist/index.html">
 <meta property="og:site_name" content="caizhijian&#39;blog 💻🧑‍💻😜">
-<meta property="og:description" content="二分查找法 从0到99之间，随机猜字，需要猜多少次？    二分查找法的时间复杂度 : O(logn) 二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。 跳表什么是跳表 基于链表，加上多级索引，减少遍历的结束数  对单链表进行查询时，时间复杂度时O(n)。 当对原始链表建立一级“索引”时，每两">
+<meta property="og:description" content="二分查找法 从0到99之间，随机猜字，需要猜多少次？   二分查找法的时间复杂度 : O(logn) 二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。 跳表什么是跳表 基于链表，加上多级索引，减少遍历的结束数  对单链表进行查询时，时间复杂度时O(n)。 当对原始链表建立一级“索引”时，每两个">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817000754587.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817001838421.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817002122731.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817003612920.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817003923337.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817004645488.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817005010666.png">
-<meta property="og:image" content="http://jzcccc.github.io/image/image-20210817005218513.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120022.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120103.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120123.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120143.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120231.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120246.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122115422.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122115412.png">
 <meta property="article:published_time" content="2021-08-16T12:00:36.000Z">
-<meta property="article:modified_time" content="2022-03-05T10:02:52.620Z">
+<meta property="article:modified_time" content="2023-11-22T04:18:59.342Z">
 <meta property="article:author" content="Jzcccc">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://jzcccc.github.io/image/image-20210817000754587.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120022.png">
   
   
   <title>跳表 - caizhijian&#39;blog 💻🧑‍💻😜</title>
@@ -284,8 +284,7 @@
               <h2 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h2><blockquote>
 <p>从0到99之间，随机猜字，需要猜多少次？</p>
 </blockquote>
-<img src="/image/image-20210817000754587.png" alt="image-20210817000754587" style="zoom: 20%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120022.png" alt="image-20210817000754587"></p>
 <p>二分查找法的时间复杂度 : O(logn)</p>
 <p>二分查找的效率： 比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。</p>
 <h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><h3 id="什么是跳表"><a href="#什么是跳表" class="headerlink" title="什么是跳表"></a>什么是跳表</h3><blockquote>
@@ -294,13 +293,9 @@
 <p>对单链表进行查询时，时间复杂度时O(n)。</p>
 <p>当对原始链表建立一级“索引”时，每两个结点提取一个结点所为索引。例如查找16，如果是单链表，需要遍历10次；</p>
 <p>如果建立一层索引，只需要遍历7次；建立2级索引，只需要6次。</p>
-<img src="/image/image-20210817001838421.png" alt="image-20210817001838421" style="zoom:25%;" />
-
-
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120103.png" alt="image-20210817001838421"></p>
 <p>若是一个64结点，五级索引的跳表，寻找62，只需要遍历11个结点</p>
-<img src="/image/image-20210817002122731.png" alt="image-20210817002122731" style="zoom:25%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120123.png" alt="image-20210817002122731"></p>
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><blockquote>
 <p>与二分查找法一样，O(logn)</p>
 </blockquote>
@@ -313,7 +308,7 @@
 </li>
 <li><p>假设现在要查找的数据是x，在第k级索引中，遍历y后，发现x大于y，小于z，通过down指针下探，可以发现，y和z之间</p>
 <p>只有3个结点。</p>
-<p>​                                             <img src="/image/image-20210817003612920.png" alt="image-20210817003612920" style="zoom:25%;" /></p>
+<p>​                                             <img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120143.png" alt="image-20210817003612920"></p>
 <p>结合分析可以知道，跳表中查询任意数据的时间复杂度为  **O(logn)**。</p>
 </li>
 </ol>
@@ -323,8 +318,7 @@
 <ol>
 <li>假设原始链表为n，一级索引则为n/2，以此类推…，n/2+n/4+n/8…+8+4+2=n-2。</li>
 </ol>
-<img src="/image/image-20210817003923337.png" alt="image-20210817003923337" style="zoom:25%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120231.png" alt="image-20210817003923337"></p>
 <ol start="2">
 <li><p>假设扩大间隔，每3个结点抽一个索引。同样类推可得 n/3, n/9,n/27,…,9,3,1，虽然还是等比数列，最后同样是n-2。</p>
 <p>但对比两个结点的构建方式，减少近一半存储空间。</p>
@@ -333,14 +327,12 @@
 <p>时间开发中，当原链表中存储的对象可能很大时，而索引结点只需要存储关键值以及索引，那么索引占用的额外空间其实可以忽略。</p>
 <h3 id="高效的动态插入和删除"><a href="#高效的动态插入和删除" class="headerlink" title="高效的动态插入和删除"></a>高效的动态插入和删除</h3><p>在单链表中，单定位好要插入的位置，插入结点的时间复杂度就是O(1)。但是，为了保证原始链表中数据的有序性，需要先找好</p>
 <p>插入的位置，即 <strong>O(logn)</strong></p>
-<p>​                                                        <img src="/image/image-20210817004645488.png" alt="image-20210817004645488" style="zoom:40%;" /></p>
+<p>​                                                        <img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122120246.png" alt="image-20210817004645488"></p>
 <h3 id="跳表索引动态更新"><a href="#跳表索引动态更新" class="headerlink" title="跳表索引动态更新"></a>跳表索引动态更新</h3><p>当不停的插入数据，不动态更新时，可能会出现极端情况</p>
-<img src="/image/image-20210817005010666.png" alt="image-20210817005010666" style="zoom:50%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122115422.png" alt="image-20210817005010666"></p>
 <p>跳表使用随机函数来维护“平衡性”，即当插入时，可以选择同时将这个数据插入到部分索引层中。例如下图，随机函数</p>
 <p>生成值k，即插入到第一级和第k级索引中。</p>
-<img src="/image/image-20210817005218513.png" alt="image-20210817005218513" style="zoom:30%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/jzcccc/pic/img/20231122115412.png" alt="image-20210817005218513"></p>
 <h3 id="跳表的应用"><a href="#跳表的应用" class="headerlink" title="跳表的应用"></a>跳表的应用</h3><blockquote>
 <p>Redis中的有序集合</p>
 </blockquote>
